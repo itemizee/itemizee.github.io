@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Josh Gerber</title>
+        <meta name="description" content="Josh Gerber's portfolio website">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body>
+        <div class = "leftonly">
+        </div>
+        <div class = "left">
+            <h3 class="h3left">
+                Josh Gerber
+            </h3>
+        
+            <p class ="leftp">
+                Welcome to my website about programming
+            </p>
+            <!-- below is hamburger menu -->
+            <div class="container" onclick="toggledisplay('solvedproblems'), myFunction(this)">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+
+            <script>
+            function myFunction(x) {
+                x.classList.toggle("change");
+            }
+            </script>
+            <script>
+            function toggledisplay(elementID)
+            {
+                if(document.getElementById('solvedproblems').style.display == "block")
+                {document.getElementById('solvedproblems').style.display = "none";}
+                else{
+                    document.getElementById('solvedproblems').style.display = "block";
+                }
+                
+                if(document.getElementById('projects').style.display == "block")
+                {document.getElementById('projects').style.display = "none";}
+                else{
+                    document.getElementById('projects').style.display = "block";
+                }
+                
+                if(document.getElementById('email').style.display == "block")
+                {document.getElementById('email').style.display = "none";}
+                else{
+                    document.getElementById('email').style.display = "block";
+                }
+                
+            }
+        </script>
+            <hr class="hr1left">
+            
+            <h5 class="h5left solvedproblems" id="solvedproblems">
+                <a href ="index.html" class="aleft">
+                    Solved Problems
+                </a>
+            </h5>
+            <h5 class="h5left solvedproblems">
+                <a href ="index.html" class="aleft">
+                    Solved Problems
+                </a>
+            </h5>
+            
+            <h5 class="h5left projects" id="projects">
+                <a href ="projects.html" class="aleft">
+                    Projects
+                </a>
+            </h5>
+            <h5 class="h5left projects">
+                <a href ="projects.html" class="aleft">
+                    Projects
+                </a>
+            </h5>
+            
+            <hr class="hr2left">
+            
+            <h5 class="h5left email" id="email">
+                <a href = "mailto:joshgrrbrr@gmail.com" class = "aleft">joshgrrbrr@gmail.com</a>
+            </h5>
+            
+            <h5 class="h5left email">
+                <a href = "mailto:joshgrrbrr@gmail.com" class = "aleft">joshgrrbrr@gmail.com</a>
+            </h5>
+            
+            <img src="vertical%20orange%20line.jpg" class="orangeline">
+            <img src="vertical%20orange%20line.jpg" class="orangeline2">
+            <img src="vertical%20orange%20line.jpg" class="orangeline3">
+            <img src="vertical%20orange%20line.jpg" class="orangeline4">
+            <img src="vertical%20orange%20line.jpg" class="orangeline5">
+            
+            
+        </div>
+        
+        
+        <div class="main" id="main">
+
+            <h1 class="h1main">
+                Projects
+            </h1>
+            
+            <p class ="ptopmain">
+                 
+            </p>
+            
+            <div class = "divmain">
+                <h3 class = "h3main">
+                    School Projects
+                </h3>
+                <p class = "pmain">
+                    This is a showcase of a few university coding assignments.  Assignments can include implementing data structures and running simulations using them.  These are just a few hand selected assignments that I completed.  I have left out full descriptions and any code I have written out of respect for any academic honesty policy or related of the university.  If you are interested in learning more about any of the problems or taking a look at my C++ code, please email me at <a href = "mailto:joshgrrbrr@gmail.com">joshgrrbrr@gmail.com</a>.
+                </p>
+                
+                <p class="dropdown" onclick="dropdownFunction('ddsp')">
+                    <a >
+                        Project List (8)
+                    </a>
+                </p>
+                <ul class="problemlist" id="ddsp">
+                    <li>Test Palindromes Using a Stack and a Queue</li>
+                    <li>A Simulation with Three Queues and Three Servers</li>
+                    <li>A Templated Ordered Doubly Linked List using Over-Loaded Operators</li>
+                    <li>Euclid's Algorithm: Recursive GCD Function</li>
+                    <li>Search Functions</li>
+                    <li>Templated Hash Table Class</li>
+                    <li>A Templated Binary Search Tree</li>
+                    <li>A Comparison of Sorts</li>
+                </ul>
+                <script>
+                    function dropdownFunction(elementID)
+                    {
+                        if(document.getElementById(elementID).style.display == "block")
+                        {document.getElementById(elementID).style.display = "none";}
+                        else{
+                            document.getElementById(elementID).style.display = "block";
+                        }
+                    }
+                
+                </script>
+            </div>
+            
+            <div class="divmain">
+                <h3 class="h3main">
+                    Personal Projects
+                </h3>
+                <p class = "pmain">
+                    These are some personal coding projects I have done in my free time.  They are not like any of the coding problem websites.  They are random coding projects that I came up with on my own for fun.  Each project links to a C++ file.  A Description of the project is at the top of each project, before any code.
+                </p>
+                <p class="dropdown" onclick="dropdownFunction('ddpp')">
+                    <a >
+                        Project List (2)
+                    </a>
+                </p>
+                <ul class="problemlist" id="ddpp"> 
+                    <li><a href="XGame.cpp" target="_blank">X Game</a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<a href="XGame.exe" download>Download X Game</a>
+                    <li><a href="SaveMacro.cpp" target="_blank">Save Macro</a></li>
+                </ul>
+            </div>
+
+        </div>
+        
+    </body>
+</html>
+<!--
+comment section
+-->

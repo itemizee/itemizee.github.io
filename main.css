@@ -1,0 +1,432 @@
+html {
+    height: 100%;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0px;
+    height: 100%;
+}
+
+div{
+}
+
+.amain{
+    color: unset;
+}
+.aleft{
+    color: unset;
+    text-decoration: unset;
+}
+.aleft:link{
+}
+
+.aleft:visited{
+    
+}
+
+.aleft:link:active{
+    text-decoration: underline;
+}
+
+a:visited:active{
+    !color: unset;
+}
+
+a{
+    color: unset;
+    text-decoration: underline;
+}
+
+ul{
+    list-style-image: url(greencheckmark.jpg);
+    padding-right: 15px;
+}
+li{
+    margin-left: 5px;
+}
+
+
+
+.h5left{
+    color: rgb(255,255,255);
+    max-width: 190px;
+    
+}
+
+
+
+.orangeline{
+    position: absolute;
+    right: 73.5%;
+    padding-right: 95px;
+    
+}
+.orangeline2{
+    position: absolute;
+    right: 73.5%;
+    padding-right: 125px;
+    
+}
+.orangeline3{
+    position: absolute;
+    right: 73.5%;
+    padding-right: 65px;
+    
+}
+
+.orangeline4{
+    position: absolute;
+    right: 73.5%;
+    padding-right: 155px;
+    
+}
+
+.orangeline5{
+    position: absolute;
+    right: 73.5%;
+    padding-right: 35px;
+    
+}
+
+
+.orangeline, .orangeline2, .orangeline3, .orangeline4, .orangeline5{
+    right: 100%;
+}
+
+
+
+
+h3{
+    color: rgb(255,255,255);
+}
+
+.h1main{
+    max-width: 676px;
+    font-size: 30px
+}
+
+.ptopmain{
+    max-width: 676px;
+}
+
+.h3main{
+    margin-top: 0em;
+    text-align: left;
+    background-color: rgb(40,40,40);
+    padding-left: 15px;
+    padding-right: 21px;
+    margin-bottom: 0em;
+    max-width: 640px;
+}
+
+.pmain{
+    !margin-top: 0em;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+    !border-color: rgb(40,40,40);
+    !border-width: medium;
+    !border-style: solid;
+    max-width: 640px;
+}
+
+.divmain{
+    margin-top: 0em;
+    !padding-left: 15px;
+    !padding-right: 15px;
+    text-align: justify;
+    border-color: rgb(40,40,40);
+    border-width: medium;
+    border-style: solid;
+    max-width: 670px;
+    margin-bottom: 2em;
+}
+
+.dropdown{
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-left: 10px;
+    background-color: rgb(240,240,240);
+    font-weight: bold;
+    font-size: 14px; 
+    cursor: pointer;
+}
+
+.problemlist{
+    display: none;
+}
+.collapse{
+    margin-top: 0em;
+    padding-left: 15px;
+    padding-right: 15px;
+   
+}
+
+
+
+.left {
+    background-color: rgb(40,40,40);
+    background-position: top-left;
+    width: 100%; 
+}
+
+.leftonly{
+    background-color: rgb(40,40,40);
+    background-position: top-left;
+    width: 100%;
+}
+.main {
+    width: 100%;
+}
+
+#main{
+    display: block;
+}
+.h3left{
+    }
+
+    .leftp{
+        color: rgb(204,204,204);
+        font-size: 12px;
+    }
+
+    .hr1left{
+        width: 190px;
+    }
+
+    .hr2left{
+        width: 190px;
+    }
+    
+    .solvedproblems{
+    text-align: center;
+    padding-right: 42px;
+    }
+
+    .projects{
+        text-align: center;
+        padding-right: 69px;
+        padding-bottom: 15px;
+    }
+    .email{
+            color: rgb(204,204,204);
+            text-align: center;
+            padding-right: 69px;
+            padding-bottom: 15px;
+        }
+
+@media only screen and (max-width: 339px)
+{
+    .h1main{
+        text-align: center;
+    }
+    .main {
+        width: 90%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+    .divmain{
+        
+    }
+    .h3left{
+        margin-top: 0;
+        margin-left: 10%;
+        margin-bottom: 0;
+        padding-top: 34px;
+        padding-bottom: 34px;
+    }
+    .leftp{
+        display:none;
+    }
+    .solvedproblems{
+        display: none;
+    }
+    .projects{
+        display: none;
+    }
+    .email{
+        display: none;
+    }
+    .hr1left{
+        display: none;
+    }
+    .hr2left{
+        display: none;
+    }
+    
+    /* below is hamburger menu*/ 
+    .container {
+        position: absolute;
+        cursor: pointer;
+        right: 10%;
+        top: 33px;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 24px;
+        height: 3px;
+        background-color: rgb(240,240,240);
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-4px, 3px);
+        transform: rotate(-45deg) translate(-4px, 3px);
+    }
+
+    .change .bar2 {opacity: 0;}
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+    .change .left{
+        
+    }
+    
+}
+@media only screen and (max-width: 767px) and (min-width: 340px)
+{
+    .h1main{
+        text-align: center;
+    }
+    .main {
+        width: 95%;
+        padding-right: 2.5%;
+        padding-left: 2.5%;
+    }
+    .h3left{
+        margin-top: 0;
+        margin-left: 10%;
+        margin-bottom: 0;
+        padding-top: 25px;
+    }
+    .leftp{
+        margin-left: 10%;
+        margin-top: 0;
+        padding-bottom: 25px;
+    }
+    .solvedproblems{
+        display: none;
+    }
+    .projects{
+        display: none;
+    }
+    .email{
+        display: none;
+    }
+    .hr1left{
+        display: none;
+    }
+    .hr2left{
+        display: none;
+    }
+    
+    /* below is hamburger menu*/ 
+    .container {
+        position: absolute;
+        cursor: pointer;
+        right: 10%;
+        top: 33px;
+    }
+
+    .bar1, .bar2, .bar3 {
+        width: 24px;
+        height: 3px;
+        background-color: rgb(240,240,240);
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-4px, 3px);
+        transform: rotate(-45deg) translate(-4px, 3px);
+    }
+
+    .change .bar2 {opacity: 0;}
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+    }
+    
+}
+@media only screen and (min-width: 768px)
+{
+    .leftonly{
+        width: 29%; 
+        float: left;
+        height: 100%;
+        position: fixed;
+    }
+    .left {
+        width: 29%; 
+        float: left;
+        height: 100%;
+    }
+    .main {
+        width: 66%;
+        float: right;
+        text-align: center;
+        padding-right: 2.5%;
+        padding-left: 2.5%;
+    }
+    .h3left{
+    max-width: 190px;
+    position: absolute;
+    right: 73.5%;
+    top: 140px;
+    padding-right: 40px;
+
+    }
+
+    .leftp{
+        color: rgb(204,204,204);
+        max-width: 190px;
+        position: absolute;
+        right: 73.5%;
+        top: 180px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .hr1left{
+        position: absolute;
+        top: 250px;
+        right: 73.5%;
+        width: 190px;
+    }
+     .hr2left{
+        position: absolute;
+        top: 370px;
+        right: 73.5%;
+        width: 190px;
+    }
+    
+    .solvedproblems{
+    position: absolute;
+    right: 73.5%;
+    top: 270px;
+    text-align: center;
+    padding-right: 42px;
+    }
+
+    .projects{
+        position: absolute;
+        right: 73.5%;
+        top: 310px;
+        text-align: center;
+        padding-right: 69px;
+    }
+    .email{
+        position: absolute;
+        right: 73.5%;
+        top: 400px;
+        text-align: center;
+        padding-right: 25px;
+    }
+}
