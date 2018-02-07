@@ -1,0 +1,65 @@
+html{
+    font-weight:600;
+    font-family: sans-serif;
+}
+#red{
+    background-color: red;
+}
+#yellow{
+    background-color: yellow;
+}
+#green{
+    background-color: green;
+}
+#blue{
+    background-color: blue;
+}
+
+input{
+    margin: 5px;
+}
+#num{
+    margin: 7px;
+    padding: 0px;
+    border: 0px;
+}
+#num2{
+    margin: 2.6px;
+    padding 0px;
+    border: 0px;
+}
+
+.lock{
+    padding-left: 15px;
+}
+
+#redScore{
+    background-color: red;
+    padding:10px;
+}
+#yellowScore{
+    background-color: yellow;
+    padding:10px;
+}
+#greenScore{
+    background-color: green;
+    padding:10px;
+}
+#blueScore{
+    background-color: #89cff0;
+    padding:10px;
+}
+#penaltyScore{
+    background-color: gray;
+    padding:10px;
+}
+#totalScore{
+    background-color: hotpink;
+    padding:10px;
+}
+
+#redScore, #yellowScore, #greenScore, #blueScore, #penaltyScore, #totalScore{
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
