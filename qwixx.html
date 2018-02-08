@@ -326,24 +326,25 @@
         
         <div>
         <span id="red">
-            <input onclick="redCheck('2')" type="checkbox" id="2">
-            <input onclick="redCheck('3')" type="checkbox" id="3">
-            <input onclick="redCheck('4')" type="checkbox" id="4">
-            <input onclick="redCheck('5')" type="checkbox" id="5">
-            <input onclick="redCheck('6')" type="checkbox" id="6">
-            <input onclick="redCheck('7')" type="checkbox" id="7">
-            <input onclick="redCheck('8')" type="checkbox" id="8">
-            <input onclick="redCheck('9')" type="checkbox" id="9">
-            <input onclick="redCheck('10')" type="checkbox" id="10">
-            <input onclick="redCheck('11')" type="checkbox" id="11">
-            <input onclick="redCheck('12')" type="checkbox" id="12" disabled>
-            <input onclick="redCheck('RL')" type="checkbox" id="RL" disabled>
+            <span><input onclick="redCheck('2')" type="checkbox" id="2"></span>
+            <span><input onclick="redCheck('3')" type="checkbox" id="3"></span>
+           <span> <input onclick="redCheck('4')" type="checkbox" id="4"></span>
+            <span><input onclick="redCheck('5')" type="checkbox" id="5"></span>
+            <span><input onclick="redCheck('6')" type="checkbox" id="6"></span>
+            <span><input onclick="redCheck('7')" type="checkbox" id="7"></span>
+            <span><input onclick="redCheck('8')" type="checkbox" id="8"></span>
+            <span><input onclick="redCheck('9')" type="checkbox" id="9"></span>
+            <span><input onclick="redCheck('10')" type="checkbox" id="10"></span>
+            <span><input onclick="redCheck('11')" type="checkbox" id="11"></span>
+            <span><input onclick="redCheck('12')" type="checkbox" id="12" disabled></span>
+            <span><input onclick="redCheck('RL')" type="checkbox" id="RL" disabled></span>
         </span>
-            <span class="lock"><input onclick="lockRow('red')" type=button value="Disable Red Row" ></span>
+            <span class="lock"><input onclick="lockRow('red')" type=button value="C" ></span>
             </div>
         
 
-        <div>
+        <div id="widthh">
+            <span>
                 <span id="num">2</span>
                 <span id="num">3</span>
                 <span id="num">4</span>
@@ -356,9 +357,10 @@
                 <span id="num2">11</span>
                 <span id="num2">12</span>
                 <span id="num">L</span>
+            </span>
         </div>
         
-        <div>
+        <div id="widthh">
         <span id="yellow">
             <input onclick="yellowCheck('22')" type="checkbox" id="22">
             <input onclick="yellowCheck('23')" type="checkbox" id="23">
@@ -373,7 +375,7 @@
             <input onclick="yellowCheck('32')" type="checkbox" id="32" disabled>
             <input onclick="yellowCheck('YL')" type="checkbox" id="YL" disabled>
         </span>
-            <span class="lock"><input onclick="lockRow('yellow')" type=button value="Disable Yellow Row"></span>
+            <span class="lock"><input onclick="lockRow('yellow')" type=button value="C"></span>
             </div>
         
         <br/>
@@ -392,7 +394,7 @@
             <input onclick="greenCheck('52')" type="checkbox" id="52" disabled>
             <input onclick="greenCheck('GL')" type="checkbox" id="GL" disabled>
         </span>
-            <span class="lock"><input onclick="lockRow('green')" type=button value="Disable Green Row"></span>
+            <span class="lock"><input onclick="lockRow('green')" type=button value="C"></span>
             </div>
         
         
@@ -427,7 +429,7 @@
             <input onclick="blueCheck('72')" type="checkbox" id="72" disabled>
             <input onclick="blueCheck('BL')" type="checkbox" id="BL" disabled>
         </span>
-            <span class="lock"><input onclick="lockRow('blue')" type=button value="Disable Blue Row"></span>
+            <span class="lock"><input onclick="lockRow('blue')" type=button value="C"></span>
         </div>
         
         <div id="penalty">

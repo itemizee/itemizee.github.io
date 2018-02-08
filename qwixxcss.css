@@ -54,6 +54,7 @@ input{
 #totalScore{
     background-color: hotpink;
     padding:10px;
+    font-size: 40px;
 }
 
 #redScore, #yellowScore, #greenScore, #blueScore, #penaltyScore, #totalScore{
