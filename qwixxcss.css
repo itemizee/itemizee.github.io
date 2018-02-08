@@ -28,7 +28,7 @@ input{
 }
 
 .lock{
-    padding-left: 15px;
+    padding-left: 5px;
 }
 
 #redScore{
@@ -54,7 +54,7 @@ input{
 #totalScore{
     background-color: hotpink;
     padding:10px;
-    font-size: 40px;
+    font-size: 20px;
 }
 
 #redScore, #yellowScore, #greenScore, #blueScore, #penaltyScore, #totalScore{
