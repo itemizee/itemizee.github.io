@@ -29,6 +29,7 @@ input{
 
 .lock{
     padding-left: 0px;
+    float: right;
 }
 
 #redScore{
