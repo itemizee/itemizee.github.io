@@ -29,7 +29,6 @@ input{
 
 .lock{
     padding-left: 0px;
-    float: right;
 }
 
 #redScore{
@@ -62,5 +61,12 @@ input{
     border-width: 1px;
     border-color: black;
     border-style: solid;
+}
+
+@media only screen and (max-width: 415px)
+{
+    .lock{
+        float: right;
+    }
 }
 
