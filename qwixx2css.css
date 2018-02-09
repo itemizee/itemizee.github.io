@@ -29,8 +29,9 @@ input{
 #num2{
     padding: 6px;
 }
-#num, #num2{
+.num, #num, #num2{
     background-color: rgb(255,150,150);
+    background-image: url(x.png);
 }
 #widthh{
     background-color: red;

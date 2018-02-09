@@ -20,6 +20,7 @@
         var blueScore = 0;
         var penaltyScore = 0;
         var totalScore = 0;
+        var test = 0;
     </script>
     <script>
         function redCheck(c)
@@ -323,19 +324,27 @@
             }
         
         </script>
-        <br/>
-        <svg height="29" width="29">
-                <line x1="0" y1="0" x2="40" y2="40" style="stroke:rgb(0,0,0);stroke-width:2" />
+        <script>
+        function nummCheck(num)
+            {
+                test++;
                 
-                    Sorry, your browser does not support inline SVG.
-            </svg>
-            <svg height="29" width="29">
-                <line x1="29" y1="0" x2="0" y2="29" style="stroke:rgb(0,0,0);stroke-width:2" />
-                sorry
-            </svg>
-        <span id="widthh">
+                if(test % 2 == 0)
+                    {
+                        document.getElementById(num).style.backgroundImage="none";
+                    }
+                else
+                    {
+                        document.getElementById(num).style.backgroundImage="url(x.png)";
+                    }
+            }
+        
+        </script>
+        <br/>
+       
+        <span onclick="nummCheck('num')" id="widthh">
             
-                <span id="num">2</span>
+                <span onclick="nummCheck('2')" id="num">2</span>
                 <span id="num">3</span>
                 <span id="num">4</span>
                 <span id="num">5</span>
@@ -348,7 +357,7 @@
                 <span id="num2">12</span>
                 <span id="num">L</span>
         </span>
-        
+        <span class="lock"><input onclick="lockRow('red')" type=button value=""></span>
         
         
         
