@@ -19,6 +19,7 @@ html{
 #red, #yellow, #green, #blue{
     padding: 5px;
     padding-bottom:8px;
+    padding-top: 8px;
 }
 
 input{
@@ -91,13 +92,7 @@ input{
     border-style: solid;
 }
 
-@media only screen and (max-width: 415px)
-{
-    .lock{
-        !float: right;
-    }
-}
-@media only screen and (min-width: 416px)
+@media only screen and (min-width: 514px)
 {
         html{
         font-weight:600;
