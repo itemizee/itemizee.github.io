@@ -64,7 +64,12 @@ input{
 }
 
 .lock{
-    padding-left: 0px;
+    background-color: rgb(230,230,230);
+    background-image: none;
+    background-position: center;
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
 }
 
 #redScore, #yellowScore, #greenScore, #blueScore{

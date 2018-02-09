@@ -134,7 +134,7 @@
     </script>
         
     <script>
-        function lockRow(c)
+        function lockRow(c, ele)
         {
             if(c == "red")
                 {
@@ -161,6 +161,7 @@
                 {
                     d[i] = true;
                 }
+            ele.style.backgroundImage = "url(x.png)";
         }
     </script>
         
@@ -213,7 +214,7 @@
             <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num2 red" id="10">12</span>
             <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="11">L</span>
             
-            <span class="lock"><input onclick="lockRow('red')" type=button value=""></span>
+            <span onclick="lockRow('red', this)" class="lock">&nbsp;&nbsp;</span>
         </div>
         
         
@@ -231,7 +232,7 @@
             <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num2 yellow" id="22">12</span>
             <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="23">L</span>
             
-            <span class="lock"><input onclick="lockRow('yellow')" type=button value=""></span>
+            <span onclick="lockRow('yellow', this)" class="lock">&nbsp;&nbsp;</span>
         </div>
         
         
@@ -249,7 +250,7 @@
             <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="34">2</span>
             <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="35">L</span> 
             
-            <span class="lock"><input onclick="lockRow('green')" type=button value=""></span>
+            <span onclick="lockRow('green', this)" class="lock">&nbsp;&nbsp;</span>
         </div>
         
         
@@ -267,7 +268,7 @@
             <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="46">2</span>
             <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="47">L</span>
             
-            <span class="lock"><input onclick="lockRow('blue')" type=button value=""></span>
+            <span onclick="lockRow('blue', this)" class="lock">&nbsp;&nbsp;</span>
         </div>
         
         <br/>
