@@ -122,4 +122,38 @@ input{
     background-repeat: no-repeat;
 }
 }
+@media only screen and (max-width: 392px)
+{
+        html{
+        font-weight:600;
+        font-family: sans-serif;
+        font-size: 19px;
+        /*-webkit-text-size-adjust: 100%;*/
+    }
+        #red, #yellow, #green, #blue{
+    padding: 5px;
+    padding-bottom:8px;
+    padding-top: 8px;
+}
+        .num{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+    .locki{
+    background-image: url(lockr.png);
+    background-position: center;
+    background-size: 20px, 20px;
+    background-repeat: no-repeat;
+}
+    .lock{
+    background-color: rgb(230,230,230);
+    background-image: none;
+    background-position: center;
+    padding-left: 4px;
+    padding-right: 4px;
+    cursor: pointer;
+}
+}
 
