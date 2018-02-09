@@ -21,17 +21,22 @@ input{
     margin:5px;
 }
 #num{
-    padding: 6px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-right: 6px;
     border-style:
 }
 #num2{
-    padding: 6px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 .num, #num, #num2{
     background-color: rgb(255,150,150);
-    background-image: url(x.png);
+    background-image: none;
+    background-position: center;
 }
 #widthh{
     background-color: red;
