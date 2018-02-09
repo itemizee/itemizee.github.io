@@ -1,0 +1,89 @@
+html{
+    font-weight:600;
+    font-family: sans-serif;
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+}
+#red{
+    background-color: red;
+}
+#yellow{
+    background-color: yellow;
+}
+#green{
+    background-color: green;
+}
+#blue{
+    background-color: blue;
+}
+
+input{
+    margin:5px;
+}
+#num{
+    padding: 6px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-style:
+}
+#num2{
+    padding: 6px;
+}
+#num, #num2{
+    background-color: rgb(255,150,150);
+}
+#widthh{
+    background-color: red;
+    padding: 10px;
+}
+svg{
+    position: absolute;
+    margin:0px;
+    border:0px;
+    padding:0px;
+    top:20px;
+    left:18px;
+}
+.lock{
+    padding-left: 0px;
+}
+
+#redScore{
+    background-color: red;
+    padding:10px;
+}
+#yellowScore{
+    background-color: yellow;
+    padding:10px;
+}
+#greenScore{
+    background-color: green;
+    padding:10px;
+}
+#blueScore{
+    background-color: #89cff0;
+    padding:10px;
+}
+#penaltyScore{
+    background-color: gray;
+    padding:10px;
+}
+#totalScore{
+    background-color: hotpink;
+    padding:10px;
+    font-size: 20px;
+}
+
+#redScore, #yellowScore, #greenScore, #blueScore, #penaltyScore, #totalScore{
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+}
+
+@media only screen and (max-width: 415px)
+{
+    .lock{
+        float: right;
+    }
+}
+
