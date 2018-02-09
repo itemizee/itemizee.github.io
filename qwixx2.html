@@ -78,7 +78,7 @@
                                     window[score] += window[checked];
                                     totalScore += window[checked];
                                     x[lockNum] = true;
-                                    document.getElementById(String(lockNum)).style.backgroundImage = "url(x.png)";
+                                    document.getElementById(String(lockNum)).style.backgroundImage = "url(lockx.png)";
                                 }
                             window[checked]++;
                             window[score] += window[checked];
@@ -99,7 +99,7 @@
                                     totalScore -= window[checked];
                                     window[checked]--;
                                     x[lockNum] = false;
-                                    document.getElementById(String(lockNum)).style.backgroundImage = "none";
+                                    document.getElementById(String(lockNum)).style.backgroundImage = "url(lockr.png)";
                                 }
                             window[score] -= window[checked];
                             totalScore -= window[checked];
