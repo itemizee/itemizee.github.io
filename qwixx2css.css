@@ -18,6 +18,7 @@ html{
 }
 #red, #yellow, #green, #blue{
     padding: 5px;
+    padding-bottom:8px;
 }
 
 input{
@@ -37,7 +38,6 @@ input{
     padding-bottom: 3px;
     padding-left: 6px;
     padding-right: 6px;
-    border-style:
 }
 .num2{
     padding-top: 3px;
@@ -86,10 +86,28 @@ input{
     border-style: solid;
 }
 
-/*@media only screen and (max-width: 415px)
+@media only screen and (max-width: 415px)
 {
     .lock{
-        float: right;
+        !float: right;
     }
-}*/
+}
+@media only screen and (min-width: 416px)
+{
+        html{
+        font-weight:600;
+        font-family: sans-serif;
+        font-size: 25px;
+        /*-webkit-text-size-adjust: 100%;*/
+    }
+        #red, #yellow, #green, #blue{
+        padding: 10px;
+    }
+        .num{
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+}
 
