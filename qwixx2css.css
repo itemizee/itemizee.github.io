@@ -1,7 +1,7 @@
 html{
     font-weight:600;
     font-family: sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     /*-webkit-text-size-adjust: 100%;*/
 }
 #red{
@@ -27,7 +27,7 @@ input{
     margin: 5px;
     background-color: grey;
     padding: 5px;
-    padding-left: 15px;
+    padding-left: 20px;
     background-position: center;
     cursor: pointer;
     background-image: none;
@@ -50,50 +50,34 @@ input{
     background-position: center;
     cursor: pointer;
 }
-.red{
+.red, #redScore{
     background-color: rgb(255,200,200);
 }
-.yellow{
+.yellow, #yellowScore{
     background-color: rgb(255,240,200);
 }
-.green{
+.green, #greenScore{
     background-color: rgb(190,230,200);
 }
-.blue{
+.blue, #blueScore{
     background-color: rgb(200,200,240);
-}
-.red, .yellow, .green, .blue{
-    width: 80%;
 }
 
 .lock{
     padding-left: 0px;
 }
 
-#redScore{
-    background-color: red;
+#redScore, #yellowScore, #greenScore, #blueScore{
     padding:10px;
 }
-#yellowScore{
-    background-color: yellow;
-    padding:10px;
-}
-#greenScore{
-    background-color: green;
-    padding:10px;
-}
-#blueScore{
-    background-color: #89cff0;
-    padding:10px;
-}
+
 #penaltyScore{
     background-color: gray;
-    padding:10px;
+    padding: 10px;
 }
 #totalScore{
     background-color: hotpink;
     padding:10px;
-    font-size: 20px;
 }
 
 #redScore, #yellowScore, #greenScore, #blueScore, #penaltyScore, #totalScore{
@@ -102,10 +86,10 @@ input{
     border-style: solid;
 }
 
-@media only screen and (max-width: 415px)
+/*@media only screen and (max-width: 415px)
 {
     .lock{
         float: right;
     }
-}
+}*/
 
