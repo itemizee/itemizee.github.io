@@ -4,12 +4,13 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Josh Gerber Qwixx Scorecard</title>
+        <title>Qwixx Scorecard 2</title>
         <meta name="description" content="qwixx scorecard">
         <link rel="stylesheet" href="qwixx2css.css">
     </head>
     <body>
-    <script >
+        
+    <script>
         var redNumChecked = 0;
         var redScore = 0;
         var yellowNumChecked = 0;
@@ -20,470 +21,264 @@
         var blueScore = 0;
         var penaltyScore = 0;
         var totalScore = 0;
-        var test = 0;
+        var x = [];
+        var d = [];
+        for(var i = 0; i < 52; i++)
+            {
+                x.push(false);
+                d.push(false);
+            }
+        d[10] = true;
+        d[11] = true;
+        d[22] = true;
+        d[23] = true;
+        d[34] = true;
+        d[35] = true;
+        d[46] = true;
+        d[47] = true;
     </script>
+        
     <script>
-        function redCheck(c)
-        {
-            {
-                if(document.getElementById(c).checked == true)
-                {
-                    if(c == "12")
-                    {
-                        redNumChecked++;
-                        redScore += redNumChecked;
-                        totalScore += redNumChecked;
-
-                        document.getElementById("RL").setAttribute("checked", "true");
-                    }
-                    redNumChecked++;
-                    redScore += redNumChecked;
-                    totalScore += redNumChecked;
-
-                    for(i = parseInt(c) - 1; i > 1; i--)
-                    {
-                        document.getElementById(i.toString()).setAttribute("disabled", "true");
-                    }
-                }
-                else
-                {
-                    if(c == "12")
-                    {
-                        redScore -= redNumChecked;
-                        totalScore -= redNumChecked;
-                        redNumChecked--;  
-
-                        document.getElementById("RL").removeAttribute("checked");
-                    }
-                    redScore -= redNumChecked;
-                    totalScore -= redNumChecked;
-                    redNumChecked--;
-
-                    var stop = false;
-                    for(i = parseInt(c) - 1;!stop && i > 1; i--)
-                    {
-                        if(document.getElementById(i.toString()).checked == true)
-                            stop = true;
-                        document.getElementById(i.toString()).removeAttribute("disabled");
-                    }
-                }
-            }
-            if(redNumChecked == 5)
-            {
-                document.getElementById("12").removeAttribute("disabled");
-            }
-            else if(redNumChecked == 4)
-            {
-                document.getElementById("12").setAttribute("disabled", "true");    
-            }
+        function numX(numm, color, checked, score)
+        {   
+            var num = parseInt(numm);
             
+            if(color == 'red')
+                {
+                    var lastNum = 10;
+                    var lockNum = 11;
+                    var minNum = 0;
+                }
+            else if(color == 'yellow')
+                {
+                    var lastNum = 22;
+                    var lockNum = 23;
+                    var minNum = 12;
+                }
+            else if(color == 'green')
+                {
+                    var lastNum = 34;
+                    var lockNum = 35;
+                    var minNum = 24;
+                }
+            else if(color == 'blue')
+                {
+                    var lastNum = 46;
+                    var lockNum = 47;
+                    var minNum = 36;
+                }
             
-            document.getElementById("redScore").innerHTML = redScore;
-            document.getElementById("totalScore").innerHTML = totalScore;
+            if(d[num] == false)
+                {
+                    if(x[num] == false)
+                        {
+                            if(num == lastNum)
+                                {
+                                    window[checked]++;
+                                    window[score] += window[checked];
+                                    totalScore += window[checked];
+                                    x[lockNum] = true;
+                                    document.getElementById(String(lockNum)).style.backgroundImage = "url(x.png)";
+                                }
+                            window[checked]++;
+                            window[score] += window[checked];
+                            totalScore += window[checked];
+                            x[num] = true;
+                            document.getElementById(numm).style.backgroundImage = "url(x.png)";
+
+                            for(var i = num - 1; i >= minNum; i--)
+                                {
+                                    d[i] = true;
+                                }
+                        }
+                    else if(x[num] == true)
+                        {
+                            if(num == lastNum)
+                                {
+                                    window[score] -= window[checked];
+                                    totalScore -= window[checked];
+                                    window[checked]--;
+                                    x[lockNum] = false;
+                                    document.getElementById(String(lockNum)).style.backgroundImage = "none";
+                                }
+                            window[score] -= window[checked];
+                            totalScore -= window[checked];
+                            window[checked]--;
+                            x[num] = false;
+                            document.getElementById(numm).style.backgroundImage = "none";
+
+                            var stop = false;
+                            for(var i = num -1; !stop && i >= minNum; i--)
+                                {
+                                    if(x[i])
+                                        {
+                                            stop = true;
+                                        }
+                                    d[i] = false;
+                                }
+                        }
+                    
+                    if(window[checked] == 5)
+                        {
+                            d[lastNum] = false;
+                        }
+                    else if(window[checked] == 4)
+                        {
+                            d[lastNum] = true;
+                        }
+                    
+                    document.getElementById(score).innerHTML = window[score];
+                    document.getElementById("totalScore").innerHTML = totalScore;
+                }
         }
     </script>
-        <script>
-        function yellowCheck(c)
-        {
-            {
-                if(document.getElementById(c).checked == true)
-                {
-                    if(c == "32")
-                    {
-                        yellowNumChecked++;
-                        yellowScore += yellowNumChecked;
-                        totalScore += yellowNumChecked;
-
-                        document.getElementById("YL").setAttribute("checked", "true");
-                    }
-                    yellowNumChecked++;
-                    yellowScore += yellowNumChecked;
-                    totalScore += yellowNumChecked;
-
-                    for(i = parseInt(c) - 1; i > 21; i--)
-                    {
-                        document.getElementById(i.toString()).setAttribute("disabled", "true");
-                    }
-                }
-                else
-                {
-                    if(c == "32")
-                    {
-                        yellowScore -= yellowNumChecked;
-                        totalScore -= yellowNumChecked;
-                        yellowNumChecked--;  
-
-                        document.getElementById("YL").removeAttribute("checked");
-                    }
-                    yellowScore -= yellowNumChecked;
-                    totalScore -= yellowNumChecked;
-                    yellowNumChecked--;
-
-                    var stop = false;
-                    for(i = parseInt(c) - 1;!stop && i > 21; i--)
-                    {
-                        if(document.getElementById(i.toString()).checked == true)
-                            stop = true;
-                        document.getElementById(i.toString()).removeAttribute("disabled");
-                    }
-                }
-            }
-            if(yellowNumChecked == 5)
-            {
-                document.getElementById("32").removeAttribute("disabled");
-            }
-            else if(yellowNumChecked == 4)
-            {
-                document.getElementById("32").setAttribute("disabled", "true");    
-            }
-            
-            
-            document.getElementById("yellowScore").innerHTML = yellowScore;
-            document.getElementById("totalScore").innerHTML = totalScore;
-        }
-    </script>
-        <script>
-        function greenCheck(c)
-        {
-            {
-                if(document.getElementById(c).checked == true)
-                {
-                    if(c == "52")
-                    {
-                        greenNumChecked++;
-                        greenScore += greenNumChecked;
-                        totalScore += greenNumChecked;
-
-                        document.getElementById("GL").setAttribute("checked", "true");
-                    }
-                    greenNumChecked++;
-                    greenScore += greenNumChecked;
-                    totalScore += greenNumChecked;
-
-                    for(i = parseInt(c) - 1; i > 41; i--)
-                    {
-                        document.getElementById(i.toString()).setAttribute("disabled", "true");
-                    }
-                }
-                else
-                {
-                    if(c == "52")
-                    {
-                        greenScore -= greenNumChecked;
-                        totalScore -= greenNumChecked;
-                        greenNumChecked--;  
-
-                        document.getElementById("GL").removeAttribute("checked");
-                    }
-                    greenScore -= greenNumChecked;
-                    totalScore -= greenNumChecked;
-                    greenNumChecked--;
-
-                    var stop = false;
-                    for(i = parseInt(c) - 1;!stop && i > 41; i--)
-                    {
-                        if(document.getElementById(i.toString()).checked == true)
-                            stop = true;
-                        document.getElementById(i.toString()).removeAttribute("disabled");
-                    }
-                }
-            }
-            if(greenNumChecked == 5)
-            {
-                document.getElementById("52").removeAttribute("disabled");
-            }
-            else if(greenNumChecked == 4)
-            {
-                document.getElementById("52").setAttribute("disabled", "true");    
-            }
-            
-            
-            document.getElementById("greenScore").innerHTML = greenScore;
-            document.getElementById("totalScore").innerHTML = totalScore;
-        }
-    </script>
-         <script>
-        function blueCheck(c)
-        {
-            {
-                if(document.getElementById(c).checked == true)
-                {
-                    if(c == "72")
-                    {
-                        blueNumChecked++;
-                        blueScore += blueNumChecked;
-                        totalScore += blueNumChecked;
-
-                        document.getElementById("BL").setAttribute("checked", "true");
-                    }
-                    blueNumChecked++;
-                    blueScore += blueNumChecked;
-                    totalScore += blueNumChecked;
-
-                    for(i = parseInt(c) - 1; i > 61; i--)
-                    {
-                        document.getElementById(i.toString()).setAttribute("disabled", "true");
-                    }
-                }
-                else
-                {
-                    if(c == "72")
-                    {
-                        blueScore -= blueNumChecked;
-                        totalScore -= blueNumChecked;
-                        blueNumChecked--;  
-
-                        document.getElementById("BL").removeAttribute("checked");
-                    }
-                    blueScore -= blueNumChecked;
-                    totalScore -= blueNumChecked;
-                    blueNumChecked--;
-
-                    var stop = false;
-                    for(i = parseInt(c) - 1;!stop && i > 61; i--)
-                    {
-                        if(document.getElementById(i.toString()).checked == true)
-                            stop = true;
-                        document.getElementById(i.toString()).removeAttribute("disabled");
-                    }
-                }
-            }
-            if(blueNumChecked == 5)
-            {
-                document.getElementById("72").removeAttribute("disabled");
-            }
-            else if(blueNumChecked == 4)
-            {
-                document.getElementById("72").setAttribute("disabled", "true");    
-            }
-            
-            
-            document.getElementById("blueScore").innerHTML = blueScore;
-            document.getElementById("totalScore").innerHTML = totalScore;
-        }
-    </script>
+        
     <script>
         function lockRow(c)
         {
             if(c == "red")
                 {
-                    for(i = 12; i > 1; i--)
-                    {
-                        document.getElementById(i.toString()).setAttribute("disabled", "true");
-                    }
+                    var max = 11;
+                    var min = 0;
                 }
-            if(c == "yellow")
+            else if(c == "yellow")
                 {
-                    for(i = 32; i > 21; i--)
-                    {
-                        document.getElementById(i.toString()).setAttribute("disabled", "true");
-                    }
+                    var max = 23;
+                    var min = 12;
                 }
-            if(c == "green")
+            else if(c == "green")
                 {
-                    for(i = 52; i > 41; i--)
-                    {
-                        document.getElementById(i.toString()).setAttribute("disabled", "true");
-                    }
+                    var max = 35;
+                    var min = 24;
                 }
-            if(c == "blue")
+            else if(c == "blue")
                 {
-                    for(i = 72; i > 61; i--)
-                    {
-                        document.getElementById(i.toString()).setAttribute("disabled", "true");
-                    }
+                    var max = 47;
+                    var min = 36;
+                }
+            
+            for(i = max; i >= min; i--)
+                {
+                    d[i] = true;
                 }
         }
-        
-        
     </script>
         
-        <script>
-            function penaltyCheck(c)
+    <script>
+        function penaltyCheck(numm)
+        {
+            var num = parseInt(numm);
+            
+            if(!x[num])
             {
-                if(document.getElementById(c).checked == true)
-                {
-                    penaltyScore -= 5;
-                    totalScore -= 5;
-                }
-                else
-                {
-                    penaltyScore += 5;
-                    totalScore += 5;
-                }
-                
-                document.getElementById("penaltyScore").innerHTML = penaltyScore;
-                document.getElementById("totalScore").innerHTML = totalScore;
+                penaltyScore -= 5;
+                totalScore -= 5;
+                document.getElementById(numm).style.backgroundImage = "url(x.png)";
+                x[num] = true;
             }
-        </script>
-        
-        <script>
-        function clearF()
+            else
             {
-                location.reload();
+                penaltyScore += 5;
+                totalScore += 5;
+                document.getElementById(numm).style.backgroundImage = "none";
+                x[num] = false;
             }
+
+            document.getElementById("penaltyScore").innerHTML = penaltyScore;
+            document.getElementById("totalScore").innerHTML = totalScore;
+        }
+    </script>
         
-        </script>
-        <script>
-        function nummCheck(num)
-            {
-                test++;
-               document.write("hello");
-                /*if(test % 2 == 0)
-                    {
-                        document.getElementById(num).style.backgroundImage="none";
-                    }
-                else
-                    {
-                        document.getElementById(num).style.backgroundImage="url(x.png)";
-                    }*/
-            }
+    <script>
+    function clearF()
+        {
+            location.reload();
+        }
+    </script>
         
-        </script>
+        
         <br/>
        
-        <div onclick="nummCheck('6969')" id="widthh">
+        <div id="red">
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="0">2</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="1">3</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="2">4</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="3">5</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="4">6</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="5">7</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="6">8</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="7">9</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num2 red" id="8">10</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num2 red" id="9">11</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num2 red" id="10">12</span>
+            <span onclick="numX(this.id, 'red', 'redNumChecked', 'redScore')" class="num red" id="11">L</span>
             
-                <span id="6969">2</span>
-                <span id="num">3</span>
-                <span id="num">4</span>
-                <span id="num">5</span>
-                <span id="num">6</span>
-                <span id="num">7</span>
-                <span id="num">8</span>
-                <span id="num">9</span>
-                <span id="num2">10</span>
-                <span id="num2">11</span>
-                <span id="num2">12</span>
-                <span id="num">L</span>
-        </div>
-        <span class="lock"><input onclick="lockRow('red')" type=button value=""></span>
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        <br/>
-         <br/> <br/> <br/> <br/>
-        
-        <br/>
-        <div>
-            <span>
-                <span id="num">2</span>
-                <span id="num">3</span>
-                <span id="num">4</span>
-                <span id="num">5</span>
-                <span id="num">6</span>
-                <span id="num">7</span>
-                <span id="num">8</span>
-                <span id="num">9</span>
-                <span id="num2">10</span>
-                <span id="num2">11</span>
-                <span id="num2">12</span>
-                <span id="num">L</span>
-            </span>
+            <span class="lock"><input onclick="lockRow('red')" type=button value=""></span>
         </div>
         
-        <div>
-        <span id="yellow">
-            <input onclick="yellowCheck('22')" type="checkbox" id="22">
-            <input onclick="yellowCheck('23')" type="checkbox" id="23">
-            <input onclick="yellowCheck('24')" type="checkbox" id="24">
-            <input onclick="yellowCheck('25')" type="checkbox" id="25">
-            <input onclick="yellowCheck('26')" type="checkbox" id="26">
-            <input onclick="yellowCheck('27')" type="checkbox" id="27">
-            <input onclick="yellowCheck('28')" type="checkbox" id="28">
-            <input onclick="yellowCheck('29')" type="checkbox" id="29">
-            <input onclick="yellowCheck('30')" type="checkbox" id="30">
-            <input onclick="yellowCheck('31')" type="checkbox" id="31">
-            <input onclick="yellowCheck('32')" type="checkbox" id="32" disabled>
-            <input onclick="yellowCheck('YL')" type="checkbox" id="YL" disabled>
-        </span>
+        <br/>
+        <div id="yellow">
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="12">2</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="13">3</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="14">4</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="15">5</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="16">6</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="17">7</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="18">8</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="19">9</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num2 yellow" id="20">10</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num2 yellow" id="21">11</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num2 yellow" id="22">12</span>
+            <span onclick="numX(this.id, 'yellow', 'yellowNumChecked', 'yellowScore')" class="num yellow" id="23">L</span>
+            
             <span class="lock"><input onclick="lockRow('yellow')" type=button value=""></span>
-            </div>
+        </div>
         
         <br/>
-        <div>
-                <span id="num2">12</span>
-                <span id="num2">11</span>
-                <span id="num2">10</span>
-                <span id="num">9</span>
-                <span id="num">8</span>
-                <span id="num">7</span>
-                <span id="num">6</span>
-                <span id="num">5</span>
-                <span id="num">4</span>
-                <span id="num">3</span>
-                <span id="num">2</span>
-                <span id="num">L</span>
-        </div>
-        <div>
         <span id="green">
-            <input onclick="greenCheck('42')" type="checkbox" id="42">
-            <input onclick="greenCheck('43')" type="checkbox" id="43">
-            <input onclick="greenCheck('44')" type="checkbox" id="44">
-            <input onclick="greenCheck('45')" type="checkbox" id="45">
-            <input onclick="greenCheck('46')" type="checkbox" id="46">
-            <input onclick="greenCheck('47')" type="checkbox" id="47">
-            <input onclick="greenCheck('48')" type="checkbox" id="48">
-            <input onclick="greenCheck('49')" type="checkbox" id="49">
-            <input onclick="greenCheck('50')" type="checkbox" id="50">
-            <input onclick="greenCheck('51')" type="checkbox" id="51">
-            <input onclick="greenCheck('52')" type="checkbox" id="52" disabled>
-            <input onclick="greenCheck('GL')" type="checkbox" id="GL" disabled>
-        </span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num2 green"  id="24">12</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num2 green"  id="25">11</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num2 green"  id="26">10</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="27">9</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="28">8</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="29">7</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="30">6</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="31">5</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="32">4</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="33">3</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="34">2</span>
+            <span onclick="numX(this.id, 'green', 'greenNumChecked', 'greenScore')" class="num green"  id="35">L</span> 
+            
             <span class="lock"><input onclick="lockRow('green')" type=button value=""></span>
-            </div>
+        </span>
         
         <br/>
-        <div>
-                <span id="num2">12</span>
-                <span id="num2">11</span>
-                <span id="num2">10</span>
-                <span id="num">9</span>
-                <span id="num">8</span>
-                <span id="num">7</span>
-                <span id="num">6</span>
-                <span id="num">5</span>
-                <span id="num">4</span>
-                <span id="num">3</span>
-                <span id="num">2</span>
-                <span id="num">L</span>
-        </div>
-        
-        
-        <div>
-        <span id="blue">
-            <input onclick="blueCheck('62')" type="checkbox" id="62">
-            <input onclick="blueCheck('63')" type="checkbox" id="63">
-            <input onclick="blueCheck('64')" type="checkbox" id="64">
-            <input onclick="blueCheck('65')" type="checkbox" id="65">
-            <input onclick="blueCheck('66')" type="checkbox" id="66">
-            <input onclick="blueCheck('67')" type="checkbox" id="67">
-            <input onclick="blueCheck('68')" type="checkbox" id="68">
-            <input onclick="blueCheck('69')" type="checkbox" id="69">
-            <input onclick="blueCheck('70')" type="checkbox" id="70">
-            <input onclick="blueCheck('71')" type="checkbox" id="71">
-            <input onclick="blueCheck('72')" type="checkbox" id="72" disabled>
-            <input onclick="blueCheck('BL')" type="checkbox" id="BL" disabled>
-        </span>
+        <div id="blue">
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num2 blue"  id="36">12</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num2 blue"  id="37">11</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num2 blue"  id="38">10</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="39">9</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="40">8</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="41">7</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="42">6</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="43">5</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="44">4</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="45">3</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="46">2</span>
+            <span onclick="numX(this.id, 'blue', 'blueNumChecked', 'blueScore')" class="num blue"  id="47">L</span>
+            
             <span class="lock"><input onclick="lockRow('blue')" type=button value=""></span>
         </div>
         
+        <br/>
         <div id="penalty">
-            <br/>
             <span>Penalty Box</span>
-        <span id="penalty">
-            <input onclick="penaltyCheck('-1')" type="checkbox" id="-1">  
-            <input onclick="penaltyCheck('-2')" type="checkbox" id="-2">    
-            <input onclick="penaltyCheck('-3')" type="checkbox" id="-3">    
-            <input onclick="penaltyCheck('-4')" type="checkbox" id="-4">    
-        </span>
-        
+            <span id="penalty">
+                <span onclick="penaltyCheck('48')" class="penalty" id="48"> </span> 
+                <span onclick="penaltyCheck('49')" class="penalty" id="49"> </span>   
+                <span onclick="penaltyCheck('50')" class="penalty" id="50"> </span>   
+                <span onclick="penaltyCheck('51')" class="penalty" id="51"> </span>   
+            </span>
         </div>
         
         <div>

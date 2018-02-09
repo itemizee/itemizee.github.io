@@ -5,52 +5,67 @@ html{
     /*-webkit-text-size-adjust: 100%;*/
 }
 #red{
-    background-color: red;
+    background-color: rgb(240,80,100);
 }
 #yellow{
-    background-color: yellow;
+    background-color: rgb(255,180,100);
 }
 #green{
-    background-color: green;
+    background-color: rgb(20,160,100);
 }
 #blue{
-    background-color: blue;
+    background-color: rgb(80,100,160);
+}
+#red, #yellow, #green, #blue{
+    padding: 5px;
 }
 
 input{
     margin:5px;
 }
-#num{
+.penalty{
+    margin: 5px;
+    background-color: grey;
+    padding: 5px;
+    padding-left: 15px;
+    background-position: center;
+    cursor: pointer;
+    background-image: none;
+}
+.num{
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 6px;
     padding-right: 6px;
     border-style:
 }
-#num2{
+.num2{
     padding-top: 3px;
     padding-bottom: 3px;
     padding-left: 3px;
     padding-right: 3px;
 }
-.num, #num, #num2{
-    background-color: rgb(255,150,150);
+.num, .num2{
     background-image: none;
     background-position: center;
-}
-#widthh{
-    background-color: red;
-    padding: 10px;
     cursor: pointer;
 }
-svg{
-    position: absolute;
-    margin:0px;
-    border:0px;
-    padding:0px;
-    top:20px;
-    left:18px;
+.red{
+    background-color: rgb(255,200,200);
 }
+.yellow{
+    background-color: rgb(255,240,200);
+}
+.green{
+    background-color: rgb(190,230,200);
+}
+.blue{
+    background-color: rgb(200,200,240);
+}
+.red, .yellow, .green, .blue{
+    width: 80%;
+}
+
 .lock{
     padding-left: 0px;
 }
